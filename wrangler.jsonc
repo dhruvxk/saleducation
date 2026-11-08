@@ -1,0 +1,14 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "sal-education-replacement",
+  "compatibility_date": "2026-11-08",
+  "pages_build_output_dir": "./dist",
+  "d1_databases": [
+    {
+      "binding": "SAL_CONTENT",
+      "database_name": "sal-education-content",
+      "database_id": "REPLACE_WITH_YOUR_D1_DATABASE_ID",
+      "migrations_dir": "./migrations"
+    }
+  ]
+}

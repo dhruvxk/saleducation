@@ -1,0 +1,1 @@
+`0002_seed.sql` is generated from the JSON content files at the project root by running `npm run db:seed:generate`. Commit the generated migration after any source content changes, then apply pending migrations to the D1 database.

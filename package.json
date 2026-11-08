@@ -1,0 +1,24 @@
+{
+  "name": "sal-education-cloudflare-site",
+  "private": true,
+  "type": "module",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "cf:dev": "wrangler pages dev dist",
+    "cf:deploy": "wrangler pages deploy dist --project-name sal-education-replacement",
+    "db:create": "wrangler d1 create sal-education-content --binding SAL_CONTENT --update-config",
+    "db:migrate:local": "wrangler d1 migrations apply sal-education-content --local",
+    "db:migrate:remote": "wrangler d1 migrations apply sal-education-content --remote",
+    "db:seed:generate": "node scripts/build-seed.mjs"
+  },
+  "dependencies": {
+    "jose": "^6.1.3"
+  },
+  "devDependencies": {
+    "astro": "^7.4.7",
+    "wrangler": "^4.50.0"
+  }
+}

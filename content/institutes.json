@@ -1,0 +1,12 @@
+[
+  {"id":"siter","slug":"sal-institute-of-technology-engineering-research","title":"SAL Institute of Technology & Engineering Research","area":"Engineering & technology","url":"https://siter.sal.edu.in/"},
+  {"id":"sce","slug":"sal-college-of-engineering","title":"SAL College of Engineering","area":"Engineering","url":"https://www.sce.sal.edu.in/"},
+  {"id":"seti","slug":"sal-engineering-technical-institute","title":"SAL Engineering & Technical Institute","area":"Engineering","url":"https://seti.sal.edu.in/"},
+  {"id":"sids","slug":"sal-institute-of-diploma-studies","title":"SAL Institute of Diploma Studies","area":"Diploma engineering","url":"https://sids.sal.edu.in/"},
+  {"id":"sim","slug":"sal-institute-of-management","title":"SAL Institute of Management","area":"Management","url":"https://sim.sal.edu.in/"},
+  {"id":"sip","slug":"sal-institute-of-pharmacy","title":"SAL Institute of Pharmacy","area":"Pharmacy","url":"https://sip.sal.edu.in/"},
+  {"id":"scp","slug":"sal-college-of-pharmacy","title":"SAL College of Pharmacy","area":"Pharmacy","url":"https://www.scp.sal.edu.in/"},
+  {"id":"ssa","slug":"sal-school-of-architecture","title":"SAL School of Architecture","area":"Architecture","url":"https://ssa.sal.edu.in/"},
+  {"id":"ssid","slug":"sal-school-of-interior-design","title":"SAL School of Interior Design","area":"Interior design","url":"https://ssid.sal.edu.in/"},
+  {"id":"sims","slug":"sal-institute-of-medical-sciences","title":"SAL Institute of Medical Sciences","area":"Medical sciences","url":"https://salmedicalcollege.com/"}
+]
