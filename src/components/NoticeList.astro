@@ -1,0 +1,8 @@
+---
+import notices from "../../content/notices.json";
+const { limit = 0 } = Astro.props;
+const shown = limit ? notices.slice(0, limit) : notices;
+---
+<div class="notice-list" data-cms-list="notices" data-cms-limit={limit || undefined}>
+  {shown.map((notice, index) => <a class="notice-item" href={notice.url} target="_blank" rel="noopener"><span class="notice-num">{String(index + 1).padStart(2, "0")}</span><span class="notice-title">{notice.title}<span class="notice-tag">{notice.institute} · {notice.status}</span></span><b aria-hidden="true">↗</b></a>)}
+</div>

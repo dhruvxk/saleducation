@@ -1,0 +1,31 @@
+---
+import SiteHeader from "../components/SiteHeader.astro";
+import SiteFooter from "../components/SiteFooter.astro";
+const { title = "SAL Education", description = "Explore programs, institutes and campus life at SAL Education, Ahmedabad.", noindex = false } = Astro.props;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f8f7f4">
+    <meta name="description" content={description}>
+    {noindex && <meta name="robots" content="noindex,nofollow">}
+    <title>{title} | SAL Education</title>
+    <link rel="icon" href="/assets/sal-mark.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://sal.edu.in">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/site.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <SiteHeader />
+    <main id="main"><slot /></main>
+    <SiteFooter />
+    <script src="/scripts/site.js" defer></script>
+    <script src="/scripts/public-content.js" defer></script>
+  </body>
+</html>

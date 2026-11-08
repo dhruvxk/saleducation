@@ -1,0 +1,16 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import PageIntro from "../../components/PageIntro.astro";
+import ProgramGrid from "../../components/ProgramGrid.astro";
+import institutes from "../../../content/institutes.json";
+import programs from "../../../content/programs.json";
+export function getStaticPaths() {
+  return institutes.map((institute) => ({ params: { slug: institute.slug }, props: { institute } }));
+}
+const { institute } = Astro.props;
+const levelCount = programs.filter((program) => program.institute === institute.title).length;
+---
+<BaseLayout title={institute.title} description={`${institute.title} programs and official institute information at SAL Education, Ahmedabad.`}>
+  <PageIntro number="03" label={institute.area.toUpperCase()} eyebrow="SAL Education institute" title={`${institute.title}`} lead="Review the programs listed for this institute and continue to the official institute site for current admissions, eligibility, facilities and contact information." />
+  <section class="section programs-section"><div class="container"><div class="institute-detail-head"><div><span class="eyebrow">Published catalog</span><h2>{levelCount} listed {levelCount === 1 ? "program" : "programs"}</h2></div><a class="button button-dark" href={institute.url} target="_blank" rel="noopener">Visit official institute site <span aria-hidden="true">↗</span></a></div><div class="course-finder"><ProgramGrid institute={institute.title} /><div class="catalog-footer"><span>Program and intake details follow SAL’s published course list.</span><a class="button button-outline" href="https://sal.edu.in/courses" target="_blank" rel="noopener">Check source catalog <span aria-hidden="true">↗</span></a></div></div></div></section>
+</BaseLayout>

@@ -1,0 +1,19 @@
+---
+const title = "SAL Website CMS";
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex,nofollow"><meta name="theme-color" content="#153e37">
+    <title>{title}</title><link rel="icon" href="/assets/sal-mark.svg" type="image/svg+xml"><link rel="stylesheet" href="/styles.css"><link rel="stylesheet" href="/site.css"><link rel="stylesheet" href="/admin.css">
+  </head>
+  <body class="admin-body">
+    <header class="admin-topbar"><a class="brand brand-footer" href="/"><img src="/assets/sal-mark.svg" alt="" width="42" height="42"><span class="brand-copy"><strong>SAL</strong><span>CONTENT STUDIO</span></span></a><div><span class="admin-access-indicator"><i></i> ACCESS PROTECTED</span><a href="/" class="admin-view-site">View public site ↗</a></div></header>
+    <main class="admin-shell">
+      <aside class="admin-sidebar"><span class="admin-overline">SITE MANAGEMENT</span><h1>Content<br>studio.</h1><p>Manage the information shown across the SAL Education website.</p><nav class="admin-tabs" aria-label="Content collections"><button class="is-active" data-collection="programs">Programs</button><button data-collection="notices">Admission notices</button><button data-collection="news">News</button><button data-collection="events">Events</button><button data-collection="resources">Resources</button></nav><div class="admin-sidebar-foot"><span>Signed in through Cloudflare Access</span><small>Changes save to the SAL Content D1 database.</small></div></aside>
+      <section class="admin-content"><div class="admin-content-head"><div><span class="admin-overline" id="collection-label">PROGRAMS</span><h2 id="collection-title">Programs</h2><p id="collection-help">Edit course names, levels, intakes and institute destinations.</p></div><button class="button button-dark" id="add-item" type="button">Add new <span aria-hidden="true">＋</span></button></div><div class="admin-alert" id="admin-alert" role="status" hidden></div><div class="admin-toolbar"><label class="admin-search"><span aria-hidden="true">⌕</span><input type="search" id="admin-search" placeholder="Search content" autocomplete="off"></label><button class="admin-refresh" id="refresh-items" type="button">Refresh ↻</button></div><div class="admin-table-wrap"><table class="admin-table"><thead><tr><th>Title</th><th>Details</th><th>Status</th><th>Updated</th><th><span class="sr-only">Actions</span></th></tr></thead><tbody id="admin-rows"><tr><td colspan="5">Loading content…</td></tr></tbody></table></div><p class="admin-empty" id="admin-empty" hidden>No entries found in this collection.</p><div class="admin-footnote"><span>Published content appears on the public website after it is refreshed.</span><span>Keep official URLs and admissions dates current.</span></div></section>
+    </main>
+    <dialog id="content-editor" class="content-editor"><form method="dialog" id="editor-form"><div class="editor-head"><div><span class="admin-overline" id="editor-kicker">NEW CONTENT</span><h2 id="editor-title">Add an item</h2></div><button class="editor-close" type="submit" value="close" aria-label="Close editor">×</button></div><div class="editor-grid" id="editor-fields"></div><div class="editor-options"><label class="publish-check"><input type="checkbox" id="field-published" checked> Published on the public site</label><label>Sort order<input type="number" id="field-sort-order" value="0" step="1"></label></div><p class="editor-error" id="editor-error" aria-live="polite"></p><div class="editor-actions"><button class="button button-outline" type="submit" value="close">Cancel</button><button class="button button-dark" id="save-item" type="button">Save changes <span aria-hidden="true">↗</span></button></div></form></dialog>
+    <script src="/scripts/admin.js" defer></script>
+  </body>
+</html>

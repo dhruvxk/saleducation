@@ -1,0 +1,9 @@
+---
+const { number, label, eyebrow, title, lead = "", image = "" } = Astro.props;
+---
+<section class:list={["page-intro", image && "page-intro-photo"]} style={image ? `--page-image: url('${image}')` : undefined}>
+  <div class="container page-intro-inner">
+    <div class="section-label"><span>{number}</span><span class="label-rule"></span><span>{label}</span></div>
+    <div class="page-intro-body"><span class="eyebrow">{eyebrow}</span><h1 set:html={title}></h1>{lead && <p>{lead}</p>}<slot /></div>
+  </div>
+</section>

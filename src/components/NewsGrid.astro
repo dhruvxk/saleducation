@@ -1,0 +1,8 @@
+---
+import news from "../../content/news.json";
+const { limit = 0 } = Astro.props;
+const shown = limit ? news.slice(0, limit) : news;
+---
+<div class="story-grid" data-cms-list="news" data-cms-limit={limit || undefined}>
+  {shown.map((story, index) => <article class:list={["story-card", index === 0 && "story-featured"]}><a class="story-image" href={story.url} target="_blank" rel="noopener"><img src={story.image} alt="" loading="lazy"><span class="story-category">{story.category}</span><span class="story-arrow">↗</span></a><div class="story-copy"><span class="story-meta">SAL Education · {story.date}</span><h3>{story.title}</h3><p>{story.summary}</p><a href={story.url} target="_blank" rel="noopener">Read the story <span aria-hidden="true">↗</span></a></div></article>)}
+</div>

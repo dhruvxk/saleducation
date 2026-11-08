@@ -1,0 +1,9 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PageIntro from "../components/PageIntro.astro";
+import ResourceGrid from "../components/ResourceGrid.astro";
+---
+<BaseLayout title="SAL Resource Library" description="Browse official SAL Education academic, governance, campus, media, placement and international resources.">
+  <PageIntro number="11" label="RESOURCE LIBRARY" eyebrow="The information you need" title="All the links,<br><em>in one place.</em>" lead="This directory brings together the supporting resources linked through SAL Education’s current navigation. Each item opens its official SAL destination." />
+  <section class="section resource-section"><div class="container"><ResourceGrid /></div></section>
+</BaseLayout>

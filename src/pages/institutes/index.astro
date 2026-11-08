@@ -1,0 +1,9 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import PageIntro from "../../components/PageIntro.astro";
+import InstituteGrid from "../../components/InstituteGrid.astro";
+---
+<BaseLayout title="Institutes" description="Browse SAL Education institutes and schools across engineering, management, pharmacy, design and medical sciences.">
+  <PageIntro number="03" label="OUR INSTITUTES" eyebrow="One campus, distinct communities" title="Find your <em>school.</em>" lead="Explore the institutes and schools represented across SAL Education’s public navigation and course catalog." />
+  <section class="section institutes-section"><div class="container"><InstituteGrid /><div class="official-note"><span>Institute pages are locally redesigned summaries.</span><a href="https://sal.edu.in/" target="_blank" rel="noopener">Open SAL’s official institute directory ↗</a></div></div></section>
+</BaseLayout>

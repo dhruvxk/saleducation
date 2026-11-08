@@ -1,0 +1,9 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PageIntro from "../components/PageIntro.astro";
+import EventGrid from "../components/EventGrid.astro";
+---
+<BaseLayout title="Events" description="Recent events published by SAL Education, including student activities, lectures and industrial visits.">
+  <PageIntro number="08" label="EVENTS" eyebrow="Campus calendar" title="Ideas, people<br><em>and experiences.</em>" lead="A selection of events listed on SAL Education’s event archive. These events are shown as archive items; visit the source for updates and more details." />
+  <section class="section events-section"><div class="container"><div class="archive-toolbar"><span>Recent published events</span><a class="text-link" href="https://sal.edu.in/all-events" target="_blank" rel="noopener">Official event archive <span aria-hidden="true">↗</span></a></div><EventGrid /></div></section>
+</BaseLayout>

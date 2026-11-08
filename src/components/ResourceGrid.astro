@@ -1,0 +1,8 @@
+---
+import resources from "../../content/resources.json";
+const { section = "" } = Astro.props;
+const groups = section ? [section] : [...new Set(resources.map((item) => item.section))];
+---
+<div class="resource-library">
+  {groups.map((group) => <section class="resource-group"><h2>{group}</h2><div class="resource-grid" data-cms-list="resources" data-section={section || group}>{resources.filter((item) => item.section === group).map((item) => <a class="resource-card" href={item.url} target="_blank" rel="noopener"><span class="resource-card-mark">↗</span><span class="resource-card-title">{item.title}</span><span class="resource-card-description">{item.description}</span></a>)}</div></section>)}
+</div>

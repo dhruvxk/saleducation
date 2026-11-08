@@ -1,0 +1,8 @@
+---
+import institutes from "../../content/institutes.json";
+const { limit = 0 } = Astro.props;
+const shown = limit ? institutes.slice(0, limit) : institutes;
+---
+<div class="institute-grid">
+  {shown.map((institute, index) => <a class:list={["institute-card", index === 0 && "institute-wide", institute.id === "sims" && "institute-medical"]} href={`/institutes/${institute.slug}/`}><span class="institute-no">{String(index + 1).padStart(2, "0")} / {institute.area.toUpperCase()}</span><span class="institute-icon">{index % 3 === 0 ? "↗" : index % 3 === 1 ? "⌁" : "✳"}</span><h3>{institute.title}</h3><span class="institute-arrow">Explore institute <b>↗</b></span></a>)}
+</div>

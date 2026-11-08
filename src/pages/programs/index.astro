@@ -1,0 +1,9 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import PageIntro from "../../components/PageIntro.astro";
+import ProgramGrid from "../../components/ProgramGrid.astro";
+---
+<BaseLayout title="Programs & Courses" description="Search SAL Education diploma, bachelor, master and doctoral programs with published intake information.">
+  <PageIntro number="02" label="PROGRAMS & COURSES" eyebrow="A course for your next chapter" title="Choose a path.<br><em>Keep your options open.</em>" lead="Search the program list from SAL’s published course catalog. Intake figures and availability can change; use the institute links to confirm current details." />
+  <section class="section programs-section"><div class="container"><div class="course-finder"><ProgramGrid controls /><div class="catalog-footer"><span>Catalog names and intake figures are based on SAL’s published page. Confirm current details with the institute.</span><a class="button button-outline" href="https://sal.edu.in/courses" target="_blank" rel="noopener">Official course catalog <span aria-hidden="true">↗</span></a></div></div></div></section>
+</BaseLayout>

@@ -1,0 +1,9 @@
+---
+import events from "../../content/events.json";
+const { limit = 0 } = Astro.props;
+const shown = limit ? events.slice(0, limit) : events;
+const dateLabel = (date: string) => new Date(`${date}T12:00:00Z`).toLocaleDateString("en-IN", { day: "2-digit", month: "short", year: "numeric", timeZone: "UTC" });
+---
+<div class="event-grid" data-cms-list="events" data-cms-limit={limit || undefined}>
+  {shown.map((event) => <article class="event-card"><div class="event-date"><span>{dateLabel(event.date).split(" ")[1]}</span><b>{dateLabel(event.date).split(" ")[0]}</b><small>{dateLabel(event.date).split(" ")[2]}</small></div><div class="event-copy"><span class="story-meta">{event.location} · {event.time}</span><h2>{event.title}</h2><p>{event.summary}</p><a href={event.url} target="_blank" rel="noopener">Event archive <span aria-hidden="true">↗</span></a></div></article>)}
+</div>

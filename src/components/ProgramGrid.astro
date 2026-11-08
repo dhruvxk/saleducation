@@ -1,0 +1,16 @@
+---
+import programs from "../../content/programs.json";
+const { level = "all", limit = 0, controls = false, institute = "" } = Astro.props;
+const entries = programs.filter((p) => (level === "all" || p.level === level) && (!institute || p.institute === institute));
+const shown = limit ? entries.slice(0, limit) : entries;
+const labels = { diploma: "Diploma", bachelor: "Bachelor", master: "Master", doctoral: "Doctoral" };
+---
+{controls && <div class="course-toolbar">
+  <div class="course-tabs" role="tablist" aria-label="Filter programs by level"><button class="course-tab is-active" type="button" role="tab" aria-selected="true" data-filter="all">All programs <span>{programs.length}</span></button><button class="course-tab" type="button" role="tab" aria-selected="false" data-filter="diploma">Diploma</button><button class="course-tab" type="button" role="tab" aria-selected="false" data-filter="bachelor">Bachelor</button><button class="course-tab" type="button" role="tab" aria-selected="false" data-filter="master">Master</button><button class="course-tab" type="button" role="tab" aria-selected="false" data-filter="doctoral">Doctoral</button></div>
+  <label class="course-search"><span class="search-icon" aria-hidden="true">⌕</span><span class="sr-only">Search programs</span><input type="search" placeholder="Search programs" autocomplete="off" data-course-search><kbd>⌘ K</kbd></label>
+</div>}
+<div class="course-results-meta"><span data-course-count>{shown.length} {shown.length === 1 ? "program" : "programs"} shown</span><a href="https://sal.edu.in/courses" target="_blank" rel="noopener">Verify details with SAL <span aria-hidden="true">↗</span></a></div>
+<div class="course-grid" data-cms-list="programs" data-level={level} data-institute={institute} data-cms-limit={limit || undefined}>
+  {shown.map((program) => <a class="course-card" href={program.url} target="_blank" rel="noopener" data-level={program.level} data-search={`${program.title} ${program.institute} ${program.level}`}><div class="course-card-top"><span class="course-level">{labels[program.level]} degree</span><span class="course-intake">{program.intake}</span></div><h3>{program.title}</h3><div class="course-card-bottom"><span>{program.institute}</span><b aria-hidden="true">↗</b></div></a>)}
+</div>
+<p class="course-empty" hidden data-course-empty>No matching programs. Try another search.</p>
